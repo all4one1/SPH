@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="_tools">
+      <UniqueIdentifier>{a8899bb5-4c16-40c9-a2d9-6c9456a1783d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGL">
+      <UniqueIdentifier>{209f8a87-9c08-4ae7-a7c9-0e0837aac8c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Solver">
+      <UniqueIdentifier>{65b66b1e-e9fc-4256-9a9e-def32b8554ea}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="glMainFunctions.cpp">
+      <Filter>OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="SolverSPH.cpp">
+      <Filter>Solver</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="tools.h">
+      <Filter>_tools</Filter>
+    </ClInclude>
+    <ClInclude Include="keyboard.h">
+      <Filter>OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="mouse.h">
+      <Filter>OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="SolverSPH.h">
+      <Filter>Solver</Filter>
+    </ClInclude>
+    <ClInclude Include="Wkernel.h">
+      <Filter>Solver</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
