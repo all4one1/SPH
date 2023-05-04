@@ -74,19 +74,24 @@ void display()
 	glVertex3d(Xright, Ybottom, 0);  	glVertex3d(Xright, Ytop, 0);
 	glEnd();
 
-
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glEnable(GL_BLEND);
 
 	//objects
-	glColor3d(0.0, 0.46, 0.89);
+	glColor4d(0.0, 0.46, 0.89, 0.1);
 	for (int i = 0; i < N; i++)
 	{
-		//if (mark[i] > 3.0) glColor3f(0.7, 0.7, 0.7);
-		circle(H * 0.4, glPosX[i], glPosY[i], 12);
-		//glBegin(GL_POINTS);
-		//glVertex3f(x[i], y[i], 0.0);
-		//glEnd();
+		//circle(H * 0.8, glPosX[i], glPosY[i], 12);
+
+		for (double r = 1; r > 0.1; r =  r - 0.2)
+			circle(H * r, glPosX[i], glPosY[i], 12);
+
 	}
 	
+
+	glDisable(GL_BLEND);
+
+
 
 
 

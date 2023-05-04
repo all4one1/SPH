@@ -13,6 +13,8 @@ using namespace std;
 
 #define pause cout << "Pause at line " << __LINE__ << endl; system("pause"); 
 #define VarLog(var) cout << #var << " " << var << endl;
+#define measure_time(func) t_ = clock(); func; t_calc += clock() - t_;
+double t_ = 0, t_calc = 0;
 
 void mainGL(int argc, char** argv);
 
@@ -57,7 +59,7 @@ int main(int argc, char **argv)
 	SPH->sigma_l = 0.0001;
 	SPH->EPS = H; // boundary epsilon
 	SPH->BOUND_DAMPING = -0.5;
-	SPH->Nmax = 500;
+	SPH->Nmax = 1000;
 
 #define L 1.5
 	SPH->Lx = Lx = 800 * L;
@@ -90,11 +92,11 @@ int main(int argc, char **argv)
 		{ 
 			while (true) 
 			{
-				SPH->solve();
+				measure_time(SPH->solve());
 
 				if (SPH->iter % 1000 == 0 || SPH->iter == 1)
 				{
-					//cout << "something to print" << endl;
+					cout << "t_calc: " << t_calc/CLOCKS_PER_SEC << endl;
 				}
 			} // end of main loop
 		}
